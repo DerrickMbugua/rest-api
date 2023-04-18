@@ -12,6 +12,10 @@ class Task extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = [
+        'name','description', 'due_date', 'status_id'
+    ];
+
     public function status(): HasOne
     {
         return $this->hasOne(Status::class);

@@ -11,6 +11,10 @@ class Status extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = [
+        'name'
+    ];
+
     public function tasks(): BelongsToMany
     {
         return $this->belongsToMany(Task::class);
